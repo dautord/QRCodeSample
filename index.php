@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
   </head>
 
   <body>
@@ -18,7 +19,9 @@
     <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-      <a class="navbar-brand" href="#">Employee Timekeeping System</a>
+        <div id = "profile-image">
+          <a class="navbar-brand" href="#"></a>
+        </div>
       </div>
       <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
@@ -57,7 +60,7 @@
 
             if(isset($_SESSION['success'])){
               echo "
-                  <div class = 'alert alert-success' style = 'background:green; color:white'>
+                  <div class = 'alert alert-success' style = 'background:green; color:white '>
                   <h4>Success!</h4>
                   ".$_SESSION['success']."
                   </div>
@@ -129,7 +132,7 @@
           alert('No cameras detected');
         }
       }).catch(function(e) {
-        console.error(e);
+        console.error(e); 
       });
       
       scanner.addListener('scan', function(c){
