@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
   </head>
 
   <body>
@@ -20,7 +19,7 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <div id = "profile-image">
-          <a class="navbar-brand" href="#"></a>
+                <a class="navbar-brand" href="#">Employee Timekeeping System</a>
         </div>
       </div>
       <ul class="nav navbar-nav">
