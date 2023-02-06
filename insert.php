@@ -14,16 +14,40 @@
   if (isset($_POST['text'])){
 
     $text = $_POST['text'];
+    date_default_timezone_set('Asia/Manila');
+    $date = date('Y-m-d');
+    $time = date('H:i:s');
 
-    $sql = "INSERT INTO table_attendance(EMPLOYEEID, TIMEIN) VALUES('$text', NOW())";
+    $sql = "SELECT * FROM table_attendance WHERE EMPLOYEEID = '$text' AND LOGDATE = '$date' AND STATUS = '0'";
+    $query = $conn->query($sql);
 
-    if($conn->query($sql) === TRUE){
-      $_SESSION['success'] = 'Attendance added successfully';
+    if ($query -> num_rows > 0) {
+
+      $sql = "UPDATE table_attendance SET TIMEOUT = '$time', STATUS = '1' WHERE EMPLOYEEID = '$text' AND LOGDATE = '$date'";
+      $query = $conn->query($sql);
+      $_SESSION['success'] = 'Successfully timed out';
+
     } else {
-      $_SESSION['error'] = $conn->error;
+
+      $sql = "INSERT INTO table_attendance(EMPLOYEEID, TIMEIN, LOGDATE, STATUS) VALUES('$text', '$time', '$date', '0')";
+
+      if ($conn->query($sql) === TRUE) {
+
+        $_SESSION['success'] = 'Successfully timed in';
+
+      } else {
+
+        $_SESSION['error'] = $conn->error;
+
+      }
+
     }
- 
-  }
+
+
+
+} else {
+  $_SESSION['error'] = 'Please scan your QR Code number';
+}
   header("location: index.php");
 
   $conn->close();
