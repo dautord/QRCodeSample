@@ -6,6 +6,7 @@
   $dbname = "qrcodedb";
 
   $conn = new mysqli($server, $username, $password, $dbname);
+  date_default_timezone_set('Asia/Manila');
 
   if ($conn->connect_error){
     die("Connection failed: " . $conn->connect_error);
@@ -14,7 +15,6 @@
   if (isset($_POST['text'])){
 
     $text = $_POST['text'];
-    date_default_timezone_set('Asia/Manila');
     $date = date('Y-m-d');
     $time = date('H:i:s');
 
@@ -43,7 +43,7 @@
 
 
 } else {
-  $_SESSION['error'] = 'Please scan your QR Code number';
+  $_SESSION['error'] = 'Please scan your QR Code';
 }
   header("location: index.php");
 
