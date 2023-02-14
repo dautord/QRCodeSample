@@ -26,7 +26,6 @@
       $sql = "UPDATE table_attendance SET TIMEOUT = '$time', STATUS = '1' WHERE EMPLOYEEID = '$text' AND LOGDATE = '$date'";
       $query = $conn->query($sql);
       $_SESSION['success'] = 'Successfully timed out';
-
     } else {
 
       $sql = "INSERT INTO table_attendance(EMPLOYEEID, TIMEIN, LOGDATE, STATUS) VALUES('$text', '$time', '$date', '0')";
@@ -34,11 +33,9 @@
       if ($conn->query($sql) === TRUE) {
 
         $_SESSION['success'] = 'Successfully timed in';
-
       } else {
 
         $_SESSION['error'] = $conn->error;
-
       }
 
     }

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script type='text/javascript' src='hideMessage.js'></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       .navbar-nav li a {
@@ -72,7 +73,7 @@
 
             if(isset($_SESSION['error'])){
             echo "
-                <div class = 'alert alert-danger'>
+                <div id = 'errorBanner' class = 'alert alert-danger'>
                 <h4>Error!</h4>
                 ".$_SESSION['error']."
                 </div>
@@ -81,7 +82,7 @@
 
             if(isset($_SESSION['success'])){
               echo "
-                  <div class = 'alert alert-success' style = 'background:green; color:white '>
+                  <div id = 'successBanner' class = 'alert alert-success' style = 'background:green; color:white '>
                   <h4>Success!</h4>
                   ".$_SESSION['success']."
                   </div>
@@ -231,6 +232,7 @@
       });
 
     </script>
+    
 
   </body>
 
