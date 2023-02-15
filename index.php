@@ -2,17 +2,25 @@
 <html>
 
   <head>
+
     <meta charset="utf-8">
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>CDBS QR Timekeeping</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+
     <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script type='text/javascript' src='hideMessage.js'></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type='text/javascript' src='hideDataEntry.js'></script>
+    
+
     <style>
       .navbar-nav li a {
         color: white;
@@ -42,14 +50,13 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <div id = "profile-image">
-          <!-- <img src="images/CDBS School Logo with text.png"> -->
           <a class="navbar-brand" href="index.php" style="margin-bottom:3px;">
             <img class="logo" src="images/CDBS School Logo.png" width="50px" height="50px">
             <span>QR Timekeeping System</span>
           </a>
         </div>
       </div>
-      <!-- <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
         <ul class="dropdown-menu" role="menu">
@@ -59,7 +66,7 @@
         </ul>
       </li>
       <li><a href="#">Page 2</a></li>
-      </ul> -->
+      </ul>
       <ul class="nav navbar-nav navbar-right">
       <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>  Login</a></li>
@@ -146,7 +153,7 @@
 
                     </thead>
 
-                    <tbody>
+                    <tbody id = "dataEntry">
 
                         <?php
 
@@ -170,11 +177,15 @@
 
                         }
 
-                           $sql ="SELECT * FROM table_attendance WHERE DATE(LOGDATE)=CURDATE()";
+                        // Get the ID or employee ID from the QR code scan
+                        // $qr_id = $_GET['id'];
 
-                           $query = $conn->query($sql);
+                        $sql ="SELECT * FROM table_attendance WHERE DATE(LOGDATE)=CURDATE()";
 
-                           while ($row = $query->fetch_assoc()){
+                        $query = $conn->query($sql);
+
+                        // Display the data for the current user only
+                        while ($row = $query->fetch_assoc()){
 
                         ?>
 

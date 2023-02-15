@@ -1,0 +1,14 @@
+.navbar-nav li a {
+  color: white;
+} 
+.navbar-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo{
+  float:left;
+}
+.welcome{
+  font-size: 20px;
+}
