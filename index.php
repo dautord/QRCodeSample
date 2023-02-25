@@ -157,13 +157,13 @@
 
                         <?php
 
-                        $server = "localhost";
+                        $server = "192.168.20.251";
 
-                        $username="root";
+                        $username = "admin";
 
-                        $password="";
+                        $password = "password123";
 
-                        $dbname="qrcodedb";
+                        $dbname = "qrcodedb";
 
                     
 
