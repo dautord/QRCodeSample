@@ -161,7 +161,7 @@
 
                         $username = "root"; //admin
 
-                        $password = " "; //password123
+                        $password = ""; //password123
 
                         $dbname = "qrcodedb";
 
