@@ -1,6 +1,6 @@
 <?php
   session_start();
-  $server = "localhost";
+  $server = "localhost"; //change to server ip address
   $username = "root"; //admin
   $password = " "; //password123
   $dbname = "qrcodedb";

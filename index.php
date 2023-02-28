@@ -157,7 +157,7 @@
 
                         <?php
 
-                        $server = "localhost"; 
+                        $server = "localhost"; //change to server ip address
 
                         $username = "root"; //admin
 
