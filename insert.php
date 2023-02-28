@@ -1,8 +1,8 @@
 <?php
   session_start();
-  $server = "192.168.20.251";
-  $username = "admin";
-  $password = "password123";
+  $server = "localhost";
+  $username = "root"; //admin
+  $password = " "; //password123
   $dbname = "qrcodedb";
 
   $conn = new mysqli($server, $username, $password, $dbname);
