@@ -157,11 +157,11 @@
 
                         <?php
 
-                        $server = "localhost"; //change to server ip address
+                        $server = "192.168.128.67"; //change to server ip address
 
-                        $username = "root"; //admin
+                        $username = "admin"; //admin
 
-                        $password = ""; //password123
+                        $password = "password123"; //password123
 
                         $dbname = "qrcodedb";
 

@@ -1,8 +1,8 @@
 <?php
   session_start();
-  $server = "localhost"; //change to server ip address
-  $username = "root"; //admin
-  $password = ""; //password123
+  $server = "192.168.128.67"; //change to server ip address
+  $username = "admin"; //admin
+  $password = "password123"; //password123
   $dbname = "qrcodedb";
 
   $conn = new mysqli($server, $username, $password, $dbname);
